@@ -1,0 +1,170 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 40px;
+    background-color: #0E1D36;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Encabezado */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* Frase motivacional */
+.divQuote {
+    padding: 20px 30px;
+    text-align: center;
+    font-size: larger;
+    color: #DCE7F8;
+    background-color: #1B2D4A;
+    border: 1px solid #344B6D;
+    border-radius: 14px;
+}
+
+/* Formulario */
+#formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#ciudad {
+    width: 280px;
+    padding: 13px 16px;
+    border: 2px solid #344B6D;
+    border-radius: 10px;
+    background-color: #1B2D4A;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#ciudad::placeholder {
+    color: #AABBD5;
+}
+
+#ciudad:focus {
+    border-color: #91B9FF;
+    box-shadow: 0 0 0 3px rgb(119 144 186 / 20%);
+}
+
+#formulario button {
+    padding: 13px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: #91B9FF;
+    color: #0E1D36;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+#formulario button:hover {
+    background-color: #B4D0FF;
+    transform: translateY(-2px);
+}
+
+#formulario button:active {
+    transform: translateY(0);
+}
+
+/* Resultados del clima */
+#resultado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background-color: #1B2D4A;
+    border: 1px solid #344B6D;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 15%);
+}
+
+/* Tarjeta del lugar */
+.lugar {
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #7790BA;
+    color: #0E1D36;
+    border-radius: 12px;
+}
+
+.lugar h3 {
+    margin: 0;
+    padding: 15px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Información meteorológica */
+.clima {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #253B5C;
+    border-radius: 12px;
+}
+
+.clima p {
+    margin: 0;
+    color: #DCE7F8;
+    font-size: 18px;
+}
+
+.clima p:nth-child(2) {
+    color: #FFFFFF;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    #resultado {
+        grid-template-columns: 1fr;
+    }
+
+    .lugar {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .clima {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
